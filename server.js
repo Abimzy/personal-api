@@ -21,7 +21,7 @@ app.use(function (req, res, next) {
  * DATABASE *
  ************/
 
-// const db = require('./models');
+const db = require('./models');
 
 /**********
  * ROUTES *
@@ -71,16 +71,37 @@ app.get('/api', (req, res) => {
     ]
   })
 });
+//CREATE ONE ENDPOINT FOR EACH CRUD PROCESS
+
 
 app.get("/api/profile", (req, res) => {
   res.json({
-    //FILL HERE WITH MY CODE
-    firtName: 'Eunice',
-    lastName: "Brackett",
+    fullName: "Eunice Brackett",
     role: "Software Engineer",
-    location: "San Francisco, CA",
+    githubUsername: "Abimzy",
+    githubLink: "https://github.com/Abimzy",
+    githubProfileImage: "To be updated later",
+    personalSiteLink: "https://abimzy.github.io/",
+    currentCity: "San Francisco, CA",
+    hobbies: [{
+        name: "skydiving",
+        type: "aerial",
+        intense: false
+      },
+      {
+        name: "biking",
+        type: "ground",
+        intense: true
+      },
+      {
+        name: "swimming",
+        type: "aquatic",
+        intense: true
+      }
+    ]
   });
 });
+
 
 /**********
  * SERVER *
