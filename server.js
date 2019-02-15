@@ -5,11 +5,13 @@ const app = express();
 // parse incoming urlencoded form data
 // and populate the req.body object
 const bodyParser = require('body-parser');
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 
 // allow cross origin requests (optional)
 // https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
@@ -51,12 +53,33 @@ app.get('/api', (req, res) => {
     message: "Welcome to my personal api! Here's what you need to know!",
     documentationUrl: "https://github.com/example-username/express-personal-api/README.md", // CHANGE ME
     baseUrl: "http://YOUR-APP-NAME.herokuapp.com", // CHANGE ME
-    endpoints: [
-      {method: "GET", path: "/api", description: "Describes all available endpoints"},
-      {method: "GET", path: "/api/profile", description: "Data about me"}, // CHANGE ME
-      {method: "POST", path: "/api/campsites", description: "E.g. Create a new campsite"} // CHANGE ME
+    endpoints: [{
+        method: "GET",
+        path: "/api",
+        description: "Describes all available endpoints"
+      },
+      {
+        method: "GET",
+        path: "/api/profile",
+        description: "Data about me"
+      }, // CHANGE ME
+      {
+        method: "POST",
+        path: "/api/campsites",
+        description: "E.g. Create a new campsite"
+      } // CHANGE ME
     ]
   })
+});
+
+app.get("/api/profile", (req, res) => {
+  res.json({
+    //FILL HERE WITH MY CODE
+    firtName: 'Eunice',
+    lastName: "Brackett",
+    role: "Software Engineer",
+    location: "San Francisco, CA",
+  });
 });
 
 /**********

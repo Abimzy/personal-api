@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SF-WDI-LABS/express-personal-api.git"
+    "url": "git+https://github.com/Abimzy/personal-api.git"
   },
   "author": "Eunice Brackett",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SF-WDI-LABS/express-personal-api/issues"
+    "url": "https://github.com/Abimzy/personal-api/issues"
   },
-  "homepage": "https://github.com/SF-WDI-LABS/express-personal-api",
+  "homepage": "https://github.com/Abimzy/personal-api",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
