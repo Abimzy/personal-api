@@ -102,6 +102,17 @@ app.get("/api/profile", (req, res) => {
   });
 });
 
+// get all locations
+app.get('/api/personal-api', (req, res) => {
+  // // send all travelDestinations as JSON response
+  db.Destinations.find((err, locations) => {
+    if (err) {
+      console.log(`Error message: ${err}`);
+      res.sendStatus(500);
+    }
+    res.json(locations);
+  });
+});
 
 /**********
  * SERVER *

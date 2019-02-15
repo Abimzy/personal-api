@@ -62,6 +62,18 @@ db.Destinations.deleteMany({}, (err, locations) => {
         console.log(`Error occured in deleting all travel destinations ${err}`);
     } else {
         console.log(`Removed all travel destinations: ${locations.length} in total`);
-        process.exit();
+        // process.exit();
     }
+
+
+    //Now add travelDestination data to database
+
+    db.Destinations.create(travelDestinations, (err, locations) => {
+        if (err) {
+            return console.log(`Data not added to database: ${err}`);
+        }
+        console.log(`Created ${locations.length} locations`);
+        process.exit();
+
+    });
 });
